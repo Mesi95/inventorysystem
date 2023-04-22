@@ -3,7 +3,6 @@ package com.example.inventorysystem.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -16,7 +15,7 @@ public class Category {
     private String description;
     @JsonIgnore
     @OneToMany(mappedBy = "category")
-    private Set<Product> products = new HashSet<>();
+    private Set<Product> products;
 
     public Category() {
     }
@@ -53,6 +52,6 @@ public class Category {
         this.description = description;
     }
     public Set<Product> getProducts() {
-        return products;
+        return this.products;
     }
 }

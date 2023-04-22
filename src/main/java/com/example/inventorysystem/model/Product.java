@@ -1,28 +1,29 @@
 package com.example.inventorysystem.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int product_id;
-
     private String product_number;
     private String product_name;
+    private String uom;
+    private Date reg_date;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "category_id",referencedColumnName = "category_id")
     private Category category;
-    private String uom;
-    private Date reg_date;
 
+//        @JsonIgnore
+//        @ManyToMany(mappedBy = "productStock")
+//        private List <Stock> productSet;
     public Product() {
     }
-
     public int getProduct_id() {
         return product_id;
     }
@@ -69,4 +70,8 @@ public class Product {
     public void assignCategory(Category category) {
         this.category = category;
     }
+
+//    public List<Stock> getProductSet() {
+//        return productSet;
+//    }
 }

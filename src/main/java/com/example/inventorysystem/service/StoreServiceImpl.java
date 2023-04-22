@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Service
-public class StoreServiceImpl implements StoreService{
+public abstract class StoreServiceImpl implements StoreService{
     @Autowired
     private StoreRepository StoreRepository;
     @Override
@@ -25,5 +25,36 @@ public class StoreServiceImpl implements StoreService{
     {
         return (List<Store>)
                 StoreRepository.findAll();
+    }
+    @Override
+    public Store
+    updateStore(Store store, int store_id)
+    {
+        Store stockS
+                = StoreRepository.findById(store_id)
+                .get();
+        if (Objects.nonNull(store.getStore_name())
+                && !"".equalsIgnoreCase(
+                store.getStore_name())) {
+            stockS.setStore_name(
+                    store.getStore_name());
+        }
+
+        if (Objects.nonNull(
+                store.getBranch())
+                && !"".equalsIgnoreCase(
+                store.getBranch())) {
+            stockS.setBranch(
+                    store.getBranch());
+        }
+
+        if (Objects.nonNull(store.getDescription())
+                && !"".equalsIgnoreCase(
+                store.getDescription())) {
+            stockS.setDescription(
+                    store.getDescription());
+        }
+
+        return StoreRepository.save(stockS);
     }
 }

@@ -1,9 +1,10 @@
 package com.example.inventorysystem.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Store {
@@ -13,6 +14,22 @@ public class Store {
     private String store_name;
     private String branch;
     private String description;
+//    @JsonIgnore
+//    @ManyToMany(mappedBy = "storeStock")
+//    private Set<Stock> storeSet;
+//= new HashSet<>()
+
+    public Store(int store_id,String store_name,String branch, String description) {
+        this.store_id=store_id;
+        this.store_name=store_name;
+        this.branch=branch;
+        this.description=description;
+    }
+    public Store(String store_name,String branch){
+        super();
+        this.store_name=store_name;
+        this.branch=branch;
+    }
 
     public Store() {
     }
@@ -48,4 +65,8 @@ public class Store {
     public void setDescription(String description) {
         this.description = description;
     }
+
+//    public Set<Stock> getStoreSet() {
+//        return storeSet;
+//    }
 }

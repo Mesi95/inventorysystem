@@ -1,11 +1,8 @@
 package com.example.inventorysystem.controller;
 
 import com.example.inventorysystem.model.Category;
-import com.example.inventorysystem.repository.CategoryRepository;
 import com.example.inventorysystem.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
