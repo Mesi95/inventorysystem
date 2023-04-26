@@ -2,11 +2,14 @@ package com.example.inventorysystem.controller;
 
 import com.example.inventorysystem.DTO.EmployeeDTO;
 import com.example.inventorysystem.DTO.LoginDTO;
+import com.example.inventorysystem.model.Employee;
 import com.example.inventorysystem.LoginResponse.LoginMesage;
 import com.example.inventorysystem.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/Employee")
@@ -24,5 +27,6 @@ public class EmployeeController {
         LoginMesage loginresponses=employeeService.loginEmployee(loginDTO);
         return ResponseEntity.ok(loginresponses);
     }
+
 }
 

@@ -13,15 +13,20 @@ public class Employee {
     @Column(name="employeename", length = 100)
     private String employeename;
 
+    @Column(name="employeerole", length = 100)
+    private String employeerole;
+
     @Column(name="email", length = 255)
     private String email;
 
     @Column(name="password", length = 255)
     private String password;
 
-    public Employee(int employeeid, String employeename, String email, String password) {
+
+    public Employee(int employeeid, String employeename,String employeerole, String email, String password) {
         this.employeeid = employeeid;
         this.employeename = employeename;
+        this.employeerole=employeerole;
         this.email = email;
         this.password = password;
     }
@@ -61,11 +66,20 @@ public class Employee {
         this.password = password;
     }
 
+    public String getEmployeerole() {
+        return employeerole;
+    }
+
+    public void setEmployeerole(String employeerole) {
+        this.employeerole = employeerole;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
                 "employeeid=" + employeeid +
                 ", employeename='" + employeename + '\'' +
+                ", employeerole='" + employeerole + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 '}';

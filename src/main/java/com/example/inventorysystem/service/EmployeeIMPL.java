@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -16,10 +17,8 @@ public class EmployeeIMPL implements EmployeeService {
 
     @Autowired
     private EmployeeRepo employeeRepo;
-
     @Autowired
     private PasswordEncoder passwordEncoder;
-
 
     @Override
     public String addEmployee(EmployeeDTO employeeDTO) {
@@ -28,6 +27,7 @@ public class EmployeeIMPL implements EmployeeService {
 
                 employeeDTO.getEmployeeid(),
                 employeeDTO.getEmployeename(),
+                employeeDTO.getEmployeerole(),
                 employeeDTO.getEmail(),
 
                 this.passwordEncoder.encode(employeeDTO.getPassword())
@@ -62,7 +62,7 @@ public class EmployeeIMPL implements EmployeeService {
             return new LoginMesage("Email not exits", false);
         }
 
-
     }
+
 
 }

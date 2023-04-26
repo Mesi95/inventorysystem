@@ -3,15 +3,17 @@ package com.example.inventorysystem.DTO;
 public class EmployeeDTO {
     private int employeeid;
     private String employeename;
+    private String employeerole;
     private String email;
     private String password;
 
     public EmployeeDTO() {
     }
 
-    public EmployeeDTO(int employeeid, String employeename, String email, String password) {
+    public EmployeeDTO(int employeeid, String employeename, String employeerole, String email, String password) {
         this.employeeid = employeeid;
         this.employeename = employeename;
+        this.employeerole=employeerole;
         this.email = email;
         this.password = password;
     }
@@ -48,11 +50,20 @@ public class EmployeeDTO {
         this.password = password;
     }
 
+    public String getEmployeerole() {
+        return employeerole;
+    }
+
+    public void setEmployeerole(String employeerole) {
+        this.employeerole = employeerole;
+    }
+
     @Override
     public String toString() {
         return "EmployeeDTO{" +
                 "employeeid=" + employeeid +
                 ", employeename='" + employeename + '\'' +
+                ", employeerole='" + employeerole + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 '}';
