@@ -34,14 +34,14 @@ public class ProductController {
     {
         return productService.fetchProductList();
     }
-    @PutMapping("/{product_id}/category/{category_id}")
-    Product RegisterCategoryToProduct(
-            @PathVariable int product_id,
-            @PathVariable int category_id
-    ){
-        Product product = productRepository.findById(product_id).get();
-        Category category = categoryRepository.findById(category_id).get();
-        product.assignCategory(category);
-        return productRepository.save(product);
-    }
+//    @PutMapping("/{product_id}/category/{category_id}")
+//    Product RegisterCategoryToProduct(
+//            @PathVariable int product_id,
+//            @PathVariable int category_id
+//    ){
+//        Product product = productRepository.findById(product_id).get();
+//        Category category = categoryRepository.findById(category_id).get();
+//        product.assignCategory(category);
+//        return productRepository.save(product);
+//    }
 }

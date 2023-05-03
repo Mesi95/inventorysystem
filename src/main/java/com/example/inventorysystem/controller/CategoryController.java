@@ -12,7 +12,6 @@ import java.util.List;
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
-
     @PostMapping("/add")
     public String add(@RequestBody Category category){
         categoryService.saveCategory(category);
@@ -27,13 +26,12 @@ public class CategoryController {
     {
         return categoryService.fetchCategoryList();
     }
-    @PutMapping("/{category_id}")
-    public Category
-    updateProductCategory(@RequestBody Category category,
-                     @PathVariable("category_id") int category_id)
-    {
-        return categoryService.updateCategory(
-                category, category_id);
-    }
-
+//    @PutMapping("/{category_id}")
+//    public Category
+//    updateProductCategory(@RequestBody Category category,
+//                     @PathVariable("category_id") int category_id)
+//    {
+//        return categoryService.updateCategory(
+//                category, category_id);
+//    }
 }

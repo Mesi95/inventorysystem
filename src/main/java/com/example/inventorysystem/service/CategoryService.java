@@ -9,7 +9,7 @@ public interface CategoryService {
     public Category saveCategory(Category category);
     public List<Category> getAllCategory();
     List<Category> fetchCategoryList();
-    Category updateCategory(Category category, int category_id);
+//    Category updateCategory(Category category, int category_id);
     // Read operation
 
 }

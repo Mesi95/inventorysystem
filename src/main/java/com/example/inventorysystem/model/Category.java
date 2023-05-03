@@ -13,9 +13,9 @@ public class Category {
     private String category_name;
     private String product_type;
     private String description;
-    @JsonIgnore
-    @OneToMany(mappedBy = "category")
-    private Set<Product> products;
+//    @JsonIgnore
+//    @OneToMany(mappedBy = "category")
+//    private Set<Product> products;
 
     public Category() {
     }
@@ -51,7 +51,7 @@ public class Category {
     public void setDescription(String description) {
         this.description = description;
     }
-    public Set<Product> getProducts() {
-        return this.products;
-    }
+//    public Set<Product> getProducts() {
+//        return this.products;
+//    }
 }

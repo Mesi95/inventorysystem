@@ -9,10 +9,10 @@ import java.util.List;
 
 public interface StockService {
 
-    public Stock saveStock(Stock stock);
-    public List<Stock> getAllStock();
-    List<Stock> fetchStockList();
-    //Stock updateStock(Stock stock, int stock_id);
-
-    ResponseEntity<Object> getAllStocks();
+//    public Stock saveStock(Stock stock);
+//    public List<Stock> getAllStock();
+//    List<Stock> fetchStockList();
+//    //Stock updateStock(Stock stock, int stock_id);
+//
+//    ResponseEntity<Object> getAllStocks();
 }

@@ -9,33 +9,33 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
-
-@Service
+//
+//@Service
 public class StockServiceImpl implements StockService{
-    @Autowired
-    private StockRepository StockRepository;
-    StoreService storeService;
-    @Override
-    public Stock saveStock(Stock stock) {
-        return StockRepository.save(stock);
-    }
-    @Override
-    public List<Stock> getAllStock() {
-        return StockRepository.findAll();
-    }
-    @Override
-    public List<Stock> fetchStockList()
-    {
-        return (List<Stock>)
-                StockRepository.findAll();
-    }
-    public ResponseEntity<Object> getAllStocks(){
-        List<Stock> dbStock = StockRepository.findAll();
-        if (dbStock.isEmpty()){
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>(dbStock,HttpStatus.OK);
-    }
+//    @Autowired
+//    private StockRepository StockRepository;
+//    StoreService storeService;
+//    @Override
+//    public Stock saveStock(Stock stock) {
+//        return StockRepository.save(stock);
+//    }
+//    @Override
+//    public List<Stock> getAllStock() {
+//        return StockRepository.findAll();
+//    }
+//    @Override
+//    public List<Stock> fetchStockList()
+//    {
+//        return (List<Stock>)
+//                StockRepository.findAll();
+//    }
+//    public ResponseEntity<Object> getAllStocks(){
+//        List<Stock> dbStock = StockRepository.findAll();
+//        if (dbStock.isEmpty()){
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
+//        return new ResponseEntity<>(dbStock,HttpStatus.OK);
+//    }
 //    @Override
 //    public Stock
 //    updateStock(Stock stock, int stock_id)

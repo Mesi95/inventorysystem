@@ -9,39 +9,39 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/stock")
-@CrossOrigin
+//@RestController
+//@RequestMapping("/stock")
+//@CrossOrigin
 public class StockController {
-    @Autowired
-    UserRepository userRepository;
-    @Autowired
-    ProductRepository productRepository;
-    @Autowired
-    StoreRepository storeRepository;
-    @Autowired
-    StockRepository stockRepository;
-    @Autowired
-    private StockService StockService;
-    @PostMapping("/add")
-    public String add(@RequestBody Stock stock){
-        StockService.saveStock(stock);
-        return "New Stock Added";
-    }
-    @GetMapping("/getAll")
-    public List<Stock> getAllStock(){
-        return StockService.getAllStock();
-    }
-    @GetMapping("/All")
-    public List<Stock> fetchStockList()
-    {
-        return StockService.fetchStockList();
-    }
-
-    @RequestMapping("/getStock")
-    public ResponseEntity<Object> getAllStocks(){
-        return StockService.getAllStocks();
-    }
+//    @Autowired
+//    UserRepository userRepository;
+//    @Autowired
+//    ProductRepository productRepository;
+//    @Autowired
+//    StoreRepository storeRepository;
+//    @Autowired
+//    StockRepository stockRepository;
+//    @Autowired
+//    private StockService StockService;
+//    @PostMapping("/add")
+//    public String add(@RequestBody Stock stock){
+//        StockService.saveStock(stock);
+//        return "New Stock Added";
+//    }
+//    @GetMapping("/getAll")
+//    public List<Stock> getAllStock(){
+//        return StockService.getAllStock();
+//    }
+//    @GetMapping("/All")
+//    public List<Stock> fetchStockList()
+//    {
+//        return StockService.fetchStockList();
+//    }
+//
+//    @RequestMapping("/getStock")
+//    public ResponseEntity<Object> getAllStocks(){
+//        return StockService.getAllStocks();
+//    }
 
 //    @PostMapping("/addStore/{store_id}/to/{stock_id}")
 //    public ResponseEntity<Object>

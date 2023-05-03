@@ -15,9 +15,9 @@ public class Product {
     private String product_name;
     private String uom;
     private Date reg_date;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "category_id",referencedColumnName = "category_id")
-    private Category category;
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "category_id",referencedColumnName = "category_id")
+//    private Category category;
 
 //        @JsonIgnore
 //        @ManyToMany(mappedBy = "productStock")
@@ -63,13 +63,13 @@ public class Product {
     public void setReg_date(Date reg_date) {
         this.reg_date = reg_date;
     }
-    public Category getCategory() {
-        return category;
-    }
-
-    public void assignCategory(Category category) {
-        this.category = category;
-    }
+//    public Category getCategory() {
+//        return category;
+//    }
+//
+//    public void assignCategory(Category category) {
+//        this.category = category;
+//    }
 
 //    public List<Stock> getProductSet() {
 //        return productSet;
